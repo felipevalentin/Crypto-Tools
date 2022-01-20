@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="navbar">
+    <li><a href="{{ url_for('sha256') }}">Resumo Criptográfico SHA-256</a></li>
+    <li><a href="{{ url_for('RSA') }}">Gerar Par de Chaves RSA</a></li>
+    <li><a href="{{ url_for('decipher') }}">Descriptografar AES 128 ecb</a></li>
+</ul>
+
+<p>
+    Simples implementação de algumas ferramentas de criptografia.<br>
+    Clique na que deseja utilizar
+</p>
+{% endblock %}

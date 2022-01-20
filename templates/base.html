@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+    {% block js %}
+    {% endblock %}
+  </head>
+
+  <body>
+    <div id="content">
+      <h1 id="title"><a href="{{ url_for('index') }}">Crypto Tools</a></h1>
+      {% block content %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

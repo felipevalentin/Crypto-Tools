@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block js %}
+<script src="{{url_for('static', filename='RSA.js')}}" async></script>
+{% endblock %}
+
+{% block content %}
+<h2>Gerar Chaves Assimétricas RSA</h2>
+<p>Gera um par de chaves RSA</p>
+
+<form id="digestform" method="post" action="{{ url_for('key_rsa') }}">
+<label for="size">Selecione um tamanho</label>
+    <select id="sizes" name="size">
+    <option value="1024">1024 bits</option>
+    <option value="2048">2048 bits</option>
+    </select>
+
+<input type="submit" value="Gerar" />
+</form>
+
+<p id="result"></p>
+
+<div id="keys">
+    <p id="private"></p>
+    <p id="public"></p>
+</div>
+{% endblock %}

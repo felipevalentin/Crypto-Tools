@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block js %}
+<script src="{{url_for('static', filename='sha256.js')}}" async></script>
+{% endblock %}
+
+{% block content %}
+<h2>Resumo Criptográfico do Documento</h2>
+<p>Gera o resumo criptográfico com o algoritmo SHA256</p>
+
+<form id="digestform" method="post" action="{{ url_for('digest_sha256') }}" enctype="multipart/form-data"">
+<label for="file">Selecione o documento</label>
+<input type="file" name="file" id="file"/>
+<button type="submit">Enviar</button>
+</form>
+
+<p id="result">Insira um documento...</p>
+<p id="digest"></p>
+{% endblock %}

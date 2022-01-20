@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block js %}
+<script src="{{url_for('static', filename='decipher.js')}}" async></script>
+{% endblock %}
+
+{% block content %}
+<h2>Decifrar</h2>
+<p>Decifra um arquivo criptografado com aes 128 ecb contido no link, com a senha utilizada.</p>
+
+<form id="digestform" method="post" action="{{ url_for('decipher_link') }}">
+  <label for="link">Link</label>
+  <input type="text" name="link" />
+  <label for="link">Senha</label>
+  <input type="text" name="password" />
+  <button type="submit">Decifrar</button>
+</form>
+<p id="result">Aguardando arquivo para ser decifrado...</p>
+{% endblock %}
